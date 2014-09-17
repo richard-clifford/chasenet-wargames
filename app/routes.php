@@ -21,10 +21,19 @@ Route::post('/login', [
     'as' => 'chasenet.login',
     'uses' => 'UserController@login',
 ]);
+Route::get('/logout', [
+    'as' => 'chasenet.logout',
+    'uses' => 'UserController@logout',
+]);
 
 Route::get('/scoreboard', [
     'as' => 'chasenet.scoreboard',
-    'uses' => 'ScoreboardController@getIndex'
+    'uses' => 'ScoreboardController@getIndex',
+]);
+
+Route::get('/wargames', [
+    'as' => 'chasenet.wargames.index',
+    'uses' => 'LevelsController@index',
 ]);
 
 // // fault

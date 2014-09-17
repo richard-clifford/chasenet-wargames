@@ -2,3 +2,12 @@
     margin-top:50px;
     min-height:350px;
 }
+
+.header-text{
+    color:#fff;
+    font-size:14px;
+    vertical-align: middle;
+    margin-top:15px;
+    height:20px;
+    line-height:20px;
+}

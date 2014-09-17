@@ -14,8 +14,17 @@ class UserController extends \BaseController {
 	public function login(){
 		$arrData = Input::all();
 
-		if((array_key_exists('email', $arrData) && !empty($arrData['email']))
-		&& (array_key_exists('password', $arrData) && !empty($arrData['password']))) {
+		$user = User::where('email', '=', $arrData['email'])->get();
+
+		if(!$user->isEmpty()) {
+
+			if(Hash::check($arrData['password'], $user->first()->password)) {
+
+				Session::put('username', $arrData['email']);
+				Session::put('logged_in', true);
+			}
+
+		} else {
 
 			$objUser = new User();
 
@@ -24,7 +33,17 @@ class UserController extends \BaseController {
 			$objUser->password = Hash::make($arrData['password']);
 
 			$objUser->save();
+
+			Session::put('username', $arrData['email']);
+			Session::put('logged_in', true);
 		}
+
+		return Redirect::route('chasenet.wargames.index');
+	}
+
+	public function logout() {
+		Session::flush();
+		return Redirect::route('chasenet.home');
 	}
 
 

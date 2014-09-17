@@ -7,23 +7,32 @@
     <link rel="stylesheet" href="/assets/css/theme.css" />
 </head>
 <body>
-  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <form role="form" class="navbar-form navbar-right" method="post" action="{{ URL::route('chasenet.login') }}">
-            <div class="form-group">
-              <input type="text" name="email" class="form-control" placeholder="Email">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                {{ HTML::linkRoute('chasenet.home', 'ChaseNET Wargames!', '', ['class' => 'navbar-brand']) }}
             </div>
-            <div class="form-group">
-              <input type="password" name="password" class="form-control" placeholder="Password">
+            <div class="navbar-collapse collapse">
+                @if(!Session::get('logged_in'))
+                    <form role="form" class="navbar-form navbar-right" method="post" action="{{ URL::route('chasenet.login') }}">
+                        <div class="form-group">
+                            <input type="text" name="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
+                        </div>
+                        <button class="btn btn-success" type="submit">Sign in</button>
+                    </form>
+                @else
+                    <div class="navbar-right">
+                        <p class="header-text">Welcome, <strong>{{ HTML::linkRoute('chasenet.logout', Session::get('username')) }}</strong></p>
+                    </div>
+                @endif
+
+                @section('menubar')
+                @stop
             </div>
-            <button class="btn btn-success" type="submit">Sign in</button>
-          </form>
-          {{ HTML::linkRoute('chasenet.home', 'ChaseNET Wargames!', '', ['class' => 'navbar-brand']) }}
         </div>
-        @section('menubar')
-        @stop
-      </div>
     </div>
     <div id="content-container">
         <div class="container">
