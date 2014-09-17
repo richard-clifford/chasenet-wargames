@@ -8,7 +8,7 @@ class ScoreboardController extends \BaseController {
 	 * @return Response
 	 */
 	public function getIndex(){
-		return View::make('scoreboard.index');
+		return View::make('scoreboard.index')->with('arrUserInfo', array());
 	}
 
 
