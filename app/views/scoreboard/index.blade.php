@@ -14,6 +14,16 @@
                             <td>Total Time inc. Penalties</td>
                         </tr>
                     </thead>
+                    <tbody>
+                    @foreach($arrUserInfo as $arrInfo)
+                        <tr>
+                            <td>{{{ $arrInfo['name'] }}}</td>
+                            <td>{{{ $arrInfo['timeTaken'] }}}</td>
+                            <td>{{{ $arrInfo['penalties'] }}}</td>
+                            <td>{{{ $arrInfo['timeTaken'] + $arrInfo['penalties'] }}}</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
                 </table>
             </div>
         </div>
