@@ -36,47 +36,34 @@ Route::get('/wargames', [
     'uses' => 'LevelsController@index',
 ]);
 
-// // fault
-// Route::get('/', function(){
-//     return View::make('hello');
-// });
+Route::group(array('before' => 'auth'), function(){
+    // Level 1
+    Route::get('/wargames/586cbf6adf67d60ed200e4839d6c3de9f25536ad', 'LevelOneController@index');
 
-// // seesaw
-// Route::get('/', function(){
-//     return View::make('hello');
-// });
+    // Level 2
+    Route::get('/wargames/fa811a4a2363a1e4149c9c7c3e0f2aae84eb68c3', 'LevelTwoController@index');
 
-// // task
-// Route::get('/', function(){
-//     return View::make('hello');
-// });
+    // Level 3
+    Route::get('/wargames/7fbb727db4b2b6715b092505673cb5922a0d63a8', 'LevelThreeController@index');
 
-// // sunburn
-// Route::get('/', function(){
-//     return View::make('hello');
-// });
+    // Level 4
+    Route::get('/wargames/3c8497b2c5b6745db91aaaaef31fb37e1671237f', 'LevelFourController@index');
 
-// // altar
-// Route::get('/', function(){
-//     return View::make('hello');
-// });
+    // Level 5
+    Route::get('/wargames/5b0113bfaebc39fb16af6afe12e236eef551791b', 'LevelFiveController@index');
 
-// // altar
-// Route::get('/', function(){
-//     return View::make('hello');
-// });
+    // Level 6
+    Route::get('/wargames/0f99752e3fb1e3326b4997d27cc1cde99b820816', 'LevelSixController@index');
 
-// // decay
-// Route::get('/', function(){
-//     return View::make('hello');
-// });
+    // Level 7
+    Route::get('/wargames/fa329d2ac11e24073f4eb050d96af22d7c324152', 'LevelSevenController@index');
 
-// // Russia
-// Route::get('/', function(){
-//     return View::make('hello');
-// });
+    // Level 8
+    Route::get('/wargames/6754fe3cd8310d20ed04b8c7b66abebcdb16d88d', 'LevelEightController@index');
 
-// // chart
-// Route::get('/', function(){
-// 	return View::make('hello');
-// });
+    // Level 9
+    Route::get('/wargames/b82b40b84a2f06957ec9caf1768340bd6b929cc4', 'LevelNineController@index');
+
+    // Level 10
+    Route::get('/wargames/8339b099f617d3e86621800c5c8a5d785fac3e55', 'LevelTenController@index');
+});
