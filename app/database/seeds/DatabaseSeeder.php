@@ -11,7 +11,9 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
-		// $this->call('UserTableSeeder');
+		$this->call('LevelOneSeeder');
+
+		$this->command->info('Seeding wargame level one');
 	}
 
 }

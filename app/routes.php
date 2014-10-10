@@ -17,16 +17,16 @@ Route::get('/', [
     'uses' => 'IndexController@getIndex',
 ]);
 
-Route::post('/login', [
+Route::post('login', [
     'as' => 'chasenet.login',
     'uses' => 'UserController@login',
 ]);
-Route::get('/logout', [
+Route::get('logout', [
     'as' => 'chasenet.logout',
     'uses' => 'UserController@logout',
 ]);
 
-Route::get('/scoreboard', [
+Route::get('scoreboard', [
     'as' => 'chasenet.scoreboard',
     'uses' => 'ScoreboardController@getIndex',
 ]);
@@ -37,17 +37,30 @@ Route::get('/wargames', [
 ]);
 
 Route::group(array('before' => 'auth'), function(){
+
     // Level 1
-    Route::get('/wargames/586cbf6adf67d60ed200e4839d6c3de9f25536ad', 'LevelOneController@index');
+    Route::get('/wargames/586cbf6adf67d60ed200e4839d6c3de9f25536ad', [
+        'uses'=>'LevelOneController@index',
+        'as'=>'chasenet.level.one',
+    ]);
 
     // Level 2
-    Route::get('/wargames/fa811a4a2363a1e4149c9c7c3e0f2aae84eb68c3', 'LevelTwoController@index');
+    Route::get('/wargames/fa811a4a2363a1e4149c9c7c3e0f2aae84eb68c3', [
+        'uses' => 'LevelTwoController@index',
+        'as' => 'chasenet.level.two',
+    ]);
 
     // Level 3
-    Route::get('/wargames/7fbb727db4b2b6715b092505673cb5922a0d63a8', 'LevelThreeController@index');
+    Route::get('/wargames/7fbb727db4b2b6715b092505673cb5922a0d63a8', [
+        'uses' => 'LevelThreeController@index',
+        'as' => 'chasenet.level.three',
+    ]);
 
     // Level 4
-    Route::get('/wargames/3c8497b2c5b6745db91aaaaef31fb37e1671237f', 'LevelFourController@index');
+    Route::get('/wargames/3c8497b2c5b6745db91aaaaef31fb37e1671237f', [
+        'uses' => 'LevelFourController@index',
+        'as' => 'chasenet.level.four'
+    ]);
 
     // Level 5
     Route::get('/wargames/5b0113bfaebc39fb16af6afe12e236eef551791b', 'LevelFiveController@index');
