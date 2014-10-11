@@ -1,3 +1,5 @@
+{{--
+
 @extends('layouts.master')
 
 @section('content')
@@ -14,3 +16,5 @@
         <li>{{ HTML::linkRoute('chasenet.level.ten', 'Level 10') }}</li>--}}
     </ul>
 @stop
+
+--}}

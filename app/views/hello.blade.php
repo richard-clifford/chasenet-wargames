@@ -15,9 +15,10 @@
                     <li>Have fun!</li>
                 </ul>
             </p>
+            <p>Start here: {{ HTML::linkRoute('chasenet.level.one', 'Level One') }}</p>
             <hr />
             <p>
-                ChaseNET IRC: <strong>irc.darkscience.net:+6697 (SSL Only) #ChaseNET</strong>
+                Need help? - Visit the ChaseNET IRC: <strong>irc.darkscience.net:+6697 (SSL Only) #ChaseNET</strong>
             </p>
         </div>
     </div>

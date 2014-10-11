@@ -31,24 +31,48 @@ Route::get('scoreboard', [
     'uses' => 'ScoreboardController@getIndex',
 ]);
 
-Route::get('/wargames', [
+Route::get('wargames', [
     'as' => 'chasenet.wargames.index',
     'uses' => 'LevelsController@index',
 ]);
 
-Route::group([],function(){
+Route::group(['prefix' => 'wargames'],function(){
 
     // Level 1
-    Route::get('/wargames/586cbf6adf67d60ed200e4839d6c3de9f25536ad', [
-        'uses'=>'LevelOneController@index',
-        'as'=>'chasenet.level.one',
-    ]);
+
+    Route::group(['prefix'=>'586cbf6adf67d60ed200e4839d6c3de9f25536ad'], function(){
+
+        Route::get('/', [
+            'uses' => 'LevelOneController@index',
+            'as'   => 'chasenet.level.one',
+        ]);
+
+    });
+
 
     // Level 2
-    Route::get('/wargames/fa811a4a2363a1e4149c9c7c3e0f2aae84eb68c3', [
-        'uses' => 'LevelTwoController@index',
-        'as' => 'chasenet.level.two',
-    ]);
+    Route::group(['prefix' => 'fa811a4a2363a1e4149c9c7c3e0f2aae84eb68c3'], function() {
+
+        Route::get('/', [
+            'uses' => 'LevelTwoController@index',
+            'as' => 'chasenet.level.two',
+        ]);
+
+        Route::group(['prefix' => 'manage'], function() {
+
+            Route::get('content', [
+                'uses' => 'LevelTwoController@manageContent',
+                'as'   => 'chasenet.level.two.manage.content',
+            ]);
+
+            Route::get('users', [
+                'uses' => 'LevelTwoController@manageUsers',
+                'as'   => 'chasenet.level.two.manage.users',
+            ]);
+        });
+    });
+
+
 
     // Level 3
     Route::get('/wargames/7fbb727db4b2b6715b092505673cb5922a0d63a8', [

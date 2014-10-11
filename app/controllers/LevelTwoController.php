@@ -9,7 +9,17 @@ class LevelTwoController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return View::make('levels.level2');
+	}
+
+	public function manageContent() {
+
+		return View::make('levels.level2.manageContent');
+	}
+
+	public function manageUsers() {
+
+		return View::make('levels.level2.manageUsers');
 	}
 
 
