@@ -36,7 +36,7 @@ Route::get('/wargames', [
     'uses' => 'LevelsController@index',
 ]);
 
-Route::group(array('before' => 'auth'), function(){
+Route::group([],function(){
 
     // Level 1
     Route::get('/wargames/586cbf6adf67d60ed200e4839d6c3de9f25536ad', [

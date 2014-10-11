@@ -9,7 +9,7 @@ class LevelOneController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return View::make('levels.level1');
 	}
 
 
