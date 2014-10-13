@@ -14,7 +14,12 @@ class LevelTwoController extends \BaseController {
 
 	public function manageContent() {
 
-		return View::make('levels.level2.manageContent');
+		Level2::getPageContent();
+
+		return View::make('levels.level2.manageContent')->with(array(
+			'page_content' => 'This is page content',
+			'page_title' => 'This is the page title'
+		));
 	}
 
 	public function manageUsers() {

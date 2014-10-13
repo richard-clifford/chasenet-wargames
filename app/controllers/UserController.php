@@ -12,6 +12,7 @@ class UserController extends \BaseController {
 	}
 
 	public function login(){
+
 		$arrData = Input::all();
 
 		$user = User::where('email', '=', $arrData['email'])->get();
@@ -38,7 +39,7 @@ class UserController extends \BaseController {
 			Session::put('logged_in', true);
 		}
 
-		return Redirect::route('chasenet.wargames.index');
+		return Redirect::route('chasenet.home');
 	}
 
 	public function logout() {
