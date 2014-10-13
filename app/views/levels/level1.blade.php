@@ -30,8 +30,10 @@
 
             e.preventDefault();
 
-            if($('input[name="username"]').val() == username && $('input[name="password"]').val() == password) {
+            var u = $('input[name="username"]').val();
+            var p = $('input[name="password"]').val();
 
+            if(u == username && p == password) {
 
                 document.cookie="level1=586cbf6adf67d60ed200e4839d6c3de9f25536ad";
 

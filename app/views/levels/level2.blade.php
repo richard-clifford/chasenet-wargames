@@ -18,7 +18,7 @@
         <div class="col-md-6">
             <div class="box">
                 <div class="box-header">
-                    <h3><i class="fa fa-user"></i>Manage Content</h3>
+                    <h3><i class="fa fa-book "></i>Manage Content</h3>
                 </div>
                 <div class="box-content">
                     <ul>
