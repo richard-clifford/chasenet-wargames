@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-
+ <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="box">
@@ -10,46 +10,39 @@
                 </div>
                 <div class="box-content">
                     Please log in to continue:
+                    {{ Form::open(array('url' => URL::current(), 'method'=>'get' )) }}
+                        Username: {{ Form::text('username', null, array('name'=>'username')) }}
+                        Password: {{ Form::password('password', null, array('name'=>'password')) }}
+                        {{ Form::submit('Login!', array('class' => 'btn btn-success', 'name'=>'submit')) }}
+                    {{ Form::close() }}
                 </div>
             </div>
         </div>
     </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="box-content">
-                {{ Form::open(array('url' => URL::current(), 'method'=>'get' )) }}
-                    Username: {{ Form::text('username', null, array('name'=>'username')) }}
-                    Password: {{ Form::password('password', null, array('name'=>'password')) }}
-                    {{ Form::submit('Login!', array('class' => 'btn btn-success', 'name'=>'submit')) }}
-                {{ Form::close() }}
-            </div>
-        </div>
-    </div>
+        var username = String.fromCharCode(97, 100, 109, 105, 110);
+        var password = String.fromCharCode(99, 108, 105, 101, 110, 116, 83, 105, 100, 101, 83, 101, 99, 117, 114, 105, 116, 121);
 
-    <script type="text/javascript">
-        $(document).ready(function() {
+        $('input[name="submit"]').click(function(e) {
 
-            var username = String.fromCharCode(97, 100, 109, 105, 110);
-            var password = String.fromCharCode(99, 108, 105, 101, 110, 116, 83, 105, 100, 101, 83, 101, 99, 117, 114, 105, 116, 121);
+            e.preventDefault();
 
-            $('input[name="submit"]').click(function(e) {
-
-                e.preventDefault();
-
-                if($('input[name="username"]').val() == username && $('input[name="password"]').val() == password) {
+            if($('input[name="username"]').val() == username && $('input[name="password"]').val() == password) {
 
 
-                    document.cookie="level1=586cbf6adf67d60ed200e4839d6c3de9f25536ad";
+                document.cookie="level1=586cbf6adf67d60ed200e4839d6c3de9f25536ad";
 
-                    window.location="{{ URL::route('chasenet.level.two') }}";
+                window.location="{{ URL::route('chasenet.level.two') }}";
 
-                } else {
-                    alert('Incorrect credentials.');
-                }
-            });
+            } else {
+                alert('Incorrect credentials.');
+            }
         });
-    </script>
+    });
+</script>
 
 @stop
 

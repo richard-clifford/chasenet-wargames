@@ -5,6 +5,7 @@
     <title>ChaseNET Wargames!</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/assets/css/theme.css" />
+    <link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
@@ -36,13 +37,13 @@
         </div>
     </div>
     <div id="content-container">
-        <div class="container">
+<!--         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12"> -->
                     @yield('content')
-                </div>
+             <!--    </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>

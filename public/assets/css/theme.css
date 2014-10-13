@@ -1,5 +1,5 @@
 #content-container{
-    margin-top:50px;
+    margin-top:70px;
     min-height:350px;
 }
 
@@ -10,4 +10,100 @@
     margin-top:15px;
     height:20px;
     line-height:20px;
+}
+
+.box {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 0px 1px #e4e6eb;
+  -moz-box-shadow: 0px 1px 0px 1px #e4e6eb;
+  box-shadow: 0px 1px 0px 1px #e4e6eb;
+  margin: 0px 0px 30px 0px;
+}
+.box.noOverflow {
+  overflow: hidden;
+}
+.box .box-header {
+  background: #222222;
+  color: white;
+  font-size: 16px;
+  overflow: hidden;
+}
+.box .box-header h2 {
+  float: left;
+  padding: 10px 0px;
+  margin: 0px 0px 0px 20px;
+}
+.box .box-header h2 i {
+  background: #1e8fc6;
+  color: white;
+  padding: 10px 0px;
+  width: 36px;
+  display: inline-block;
+  text-align: center;
+  margin: -10px 20px -10px -20px;
+}
+.box .box-header .box-icon {
+  background: #1e8fc6;
+  float: right;
+}
+.box .box-header .box-icon i {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  width: 36px;
+  padding: 10px 0px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  opacity: .8;
+  filter: alpha(opacity=80);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  border-left: 1px solid #36a9e1;
+  text-decoration: none;
+}
+.box .box-header .box-icon i:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.box .box-content {
+  padding: 10px;
+  background: white;
+}
+
+
+.box .box-content.no-padding {
+    padding:10px 0;
+}
+.box.no-border {
+    border:0;
+    box-shadow:none;
+}
+.box .box-content {
+    overflow:auto; overflow: visible;
+}
+.box-content form:last-child {
+    margin-bottom:0;
+}
+a.brand {
+    background: none;
+    border-bottom: none;
+}
+.box .box-header h2, .box .box-header h3, .box .box-header h4 {
+  float: left;
+  padding: 10px 0px;
+  margin: 0px 0px 0px 20px;
+}
+.box .box-header h2 i, .box .box-header h3 i, .box .box-header h4 i {
+  background: #111111;
+  color: white;
+  padding: 10px 0px;
+  width: 36px;
+  display: inline-block;
+  text-align: center;
+  margin: -10px 20px -10px -20px;
 }
